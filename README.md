@@ -1,9 +1,9 @@
-# All Materials in One Place
+# Koleksi Materi
 
-## Material Link
+## Link Materi
 
 - [Java Apache Maven](java-apache-maven.md)
 
-## Source By:
+## Source:
 
-[Programmer Zaman Now](https://github.com/ProgrammerZamanNow)
+- [Programmer Zaman Now](https://github.com/ProgrammerZamanNow)
