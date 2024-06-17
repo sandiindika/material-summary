@@ -4,7 +4,7 @@
 
 Build Automation adalah proses meng-otomatisasi tahapan pembuatan software dan hal-hal yang berhubungan dengannya, seperti kompilasi: source code menjadi binary code, mem-package binary code menjadi distribution file, membuat dokumentasi, menjalankan automated test sampai manajemen dependency.
 
-Jadi seperti saat membuat aplikasi menggunakan Java, kita harus meng-compile source code-nya. Jika kita menggunakan IDE, kita akan dibantu dalam hal compile. Namun, pada kenyataannya kita tidak mungkin membawa IDE ke dalam server untuk meng-compile source code Java. Sehingga kita harus meng-compile source code Java menjadi binary code. Kemudian melakukan packaging binary code menjadi distribution file seperti dari .class menjadi .jar (Java ARchive). Jadi Build Automation akan meng-otomatisasi semua proses tersebut sehingga tidak perlu dilakukan secara manual.
+Jadi seperti saat membuat aplikasi menggunakan Java, kita harus meng-compile source code-nya. Jika kita menggunakan IDE, kita akan dibantu dalam hal compile. Namun, pada kenyataannya kita tidak mungkin membawa IDE ke dalam server untuk meng-compile source code Java. Sehingga kita harus meng-compile source code Java menjadi binary code. Kemudian melakukan packaging binary code menjadi distribution file seperti dari `.class` menjadi `.jar` (Java ARchive). Jadi Build Automation akan meng-otomatisasi semua proses tersebut sehingga tidak perlu dilakukan secara manual.
 
 ## Kompilasi Source Code
 
@@ -16,7 +16,7 @@ Proses compile seperti gambar dilakukan secara manual saat kita tidak menggunaka
 
 ![Mem-package Binary File](images/java_apache_maven/package_binary_file.png)
 
-Dari binary file .class di package menjadi distribution file seperti .jar (Java ARchive), .war (Web ARchive), .ear (Enterprise ARchive), dan lain sebagainya.
+Dari binary file `.class` di package menjadi distribution file seperti `.jar` (Java ARchive), `.war` (Web ARchive), `.ear` (Enterprise ARchive), dan lain sebagainya.
 
 ## Membuat Dokumentasi
 
@@ -216,7 +216,7 @@ Maven mendukung properties untuk menyimpan data konfigurasi. Fitur ini akan sang
 
 ## Membuat Distribution File
 
-Secara default, maven mendukung pembuatan distribution file menggunakan lifecycle package. Hanya saja, hasil distribution file-nya berupa file jar yang berisikan binary code dari project kita. Dependency lainnya tidak dimasukkan, sehingga tidak bisa langsung dijalankan.
+Secara default, maven mendukung pembuatan distribution file menggunakan lifecycle package. Hanya saja, hasil distribution file-nya berupa file `.jar` yang berisikan binary code dari project kita. Dependency lainnya tidak dimasukkan, sehingga tidak bisa langsung dijalankan.
 
 ## Menggunakan Assembly Plugin
 
