@@ -254,3 +254,7 @@ More detail: https://youtu.be/VYA7NzIZFdg?t=3100
 Saat project kita sudah besar, kadang kita sering menggunakan banyak dependency. Masalah dengan banyak dependency adalah, jika kita salah menggunakan dependency yang sama namun versinya berbeda-beda. Maven mendukung fitur dependency management, dimana kita bisa memasukkan daftar dependency di parent module beserta versinya, lalu menambahkan dependency tersebut di module tanpa harus menggunakan versinya. Secara otomatis versi dependency akan sama dengan yang ada di dependency management di parent module.
 
 Mode detail: https://youtu.be/VYA7NzIZFdg?t=3646
+
+## Source:
+
+- [Programmer Zaman Now](https://github.com/ProgrammerZamanNow)

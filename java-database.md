@@ -54,3 +54,14 @@ Untuk menghubungkan aplikasi Java dengan PostgreSQL menggunakan JDBC, kita memer
     - Manual Download
 
         Jika tidak menggunakan sistem manajemen dependensi seperti Maven atau Gradle, kita bisa mengunduh file `.jar` dari situs resmi dan menambahkannya ke classpath proyek kita.
+
+        - Jalankan IntellJ IDE.
+        - Buat atau buka proyek Java.
+        - Klik kanan pada nama proyek dan pilih **Open Module Settings**.
+        - Setelah itu, pilih **Libraries** pada tab **Project Settings** dan klik **New Project Library (+)**.
+        - Kemudian, pilih file PostgreSQL Database Driver seperti `postgresql-42.7.3.jar`.
+        - Info lengkap ada [disini](https://postgresqltutorial.com/postgresql-jdbc/connecting-to-postgresql-database)
+
+## Source:
+
+- [Programmer Zaman Now](https://github.com/ProgrammerZamanNow)
