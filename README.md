@@ -1,3 +1,5 @@
 # All Materials in One Place
 
-## [Java Apache Maven](java-apache-maven.md)
+## Material Link
+
+- [Java Apache Maven](java-apache-maven.md)
