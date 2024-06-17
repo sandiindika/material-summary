@@ -16,3 +16,41 @@ Belajar Java Database menggunakan unit test, dengan menambahkan dependency JUnit
 
 Source junit-jupiter di https://search.maven.org/
 
+## Driver
+
+Driver adalah jembatan penghubung antara JDBC dan Database Management System yang akan digunakan. Sebenarnya Driver itu berisikan class-class implementasi dari interface yang terdapat di JDBC. Tanpa menggunakan Driver, JDBC tidak bisa terkoneksi ke DBMS. Driver di JDBC direpresentasikan oleh interface java.sql.Driver.
+
+Dokumentasi (Java Doc): https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Driver.html
+
+## PostgreSQL Driver
+
+Untuk menghubungkan aplikasi Java dengan PostgreSQL menggunakan JDBC, kita memerlukan driver PostgreSQL JDBC. Langkah-langkah untuk mengunduh dan menggunakan driver PostgreSQL JDBC:
+
+1. Unduh Driver PostgreSQL JDBC dari situs resmi PostgreSQL atau dari repository Maven. Lihat [sumber](https://jdbc.postgresql.org/download)
+
+2. Tambahkan Driver ke Proyek Java.
+    
+    - Menggunakan Maven
+
+        Jika menggunakan Maven untuk manajemen proyek, tambahkan dependensi berikut ke dalam file `pom.xml`:
+        ```xml
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+        ```
+        Untuk memeriksa versi terbaru, cek sumber [disini](https://central.sonatype.com/artifact/org.postgresql/postgresql)
+
+    - Menggunakan Gradle
+
+        Jika menggunakan Gradle untuk manajemen proyek, tambahkan dependensi berikut ke dalam file `build.gradle`:
+        ```gradle
+        dependencies {
+            implementation 'org.postgresql:postgresql:42.7.3'
+        }
+        ```
+
+    - Manual Download
+
+        Jika tidak menggunakan sistem manajemen dependensi seperti Maven atau Gradle, kita bisa mengunduh file `.jar` dari situs resmi dan menambahkannya ke classpath proyek kita.
