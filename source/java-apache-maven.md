@@ -8,31 +8,31 @@ Jadi seperti saat membuat aplikasi menggunakan Java, kita harus meng-compile sou
 
 ## Kompilasi Source Code
 
-![Kompilasi Source Code](images/java_apache_maven/kompilasi_source_code.png)
+![Kompilasi Source Code](/images/java_apache_maven/kompilasi_source_code.png)
 
 Proses compile seperti gambar dilakukan secara manual saat kita tidak menggunakan IDE.
 
 ## Mem-package Binary File
 
-![Mem-package Binary File](images/java_apache_maven/package_binary_file.png)
+![Mem-package Binary File](/images/java_apache_maven/package_binary_file.png)
 
 Dari binary file `.class` di package menjadi distribution file seperti `.jar` (Java ARchive), `.war` (Web ARchive), `.ear` (Enterprise ARchive), dan lain sebagainya.
 
 ## Membuat Dokumentasi
 
-![Membuat Dokumentasi](images/java_apache_maven/membuat_dokumentasi.png)
+![Membuat Dokumentasi](/images/java_apache_maven/membuat_dokumentasi.png)
 
 Kemampuan Java untuk compile source code menjadi dokumentasi (Java Doc). Java Doc adalah hasil compile dari source code.
 
 ## Menjalankan Automated Test
 
-![Menjalankan Automated Test](images/java_apache_maven/menjalankan_automated_test.png)
+![Menjalankan Automated Test](/images/java_apache_maven/menjalankan_automated_test.png)
 
 Proses otomatisasi test dengan menggunakan build automation. Pada kenyataannya saat kita membuat aplikasi, kita juga pasti akan membuat test code juga (unit test) yang nanti dapat dijalankan secara otomatis sehingga kita bisa melihat test resultnya.
 
 ## Management Dependency
 
-![Management Dependency](images/java_apache_maven/management_dependency.png)
+![Management Dependency](/images/java_apache_maven/management_dependency.png)
 
 Saat membuat aplikasi kita selalu membutuhkan framework yang sudah ada, sehingga kita harus mendownload secara manual kemudian disimpan dan di compile bersama sehingga menjadi ribet. Dengan build automation kita dapat meringkas proses-proses tersebut secara otomatis.
 
@@ -171,7 +171,7 @@ Saat kita menambahkan dependency ke project Maven, kita harus menentukan scope d
 
 Saat kita menambahkan dependency, terdapat istilah repository yaitu lokasi file .jar itu tersedia (default repository Maven).
 
-![Repository Dependency](images/java_apache_maven/management_dependency.png)
+![Repository Dependency](/images/java_apache_maven/management_dependency.png)
 
 ## Menambahkan Repository Baru
 

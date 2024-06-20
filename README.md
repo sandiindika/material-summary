@@ -4,6 +4,6 @@
 
 ### Java
 
-- [Java Apache Maven](java-apache-maven.md)
-- [Java Database](java-database.md)
-- [Java Persistence API](java-persistence-api.md)
+- [Java Apache Maven](/source/java-apache-maven.md)
+- [Java Database](/source/java-database.md)
+- [Java Persistence API](/source/java-persistence-api.md)
