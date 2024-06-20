@@ -65,7 +65,7 @@ Untuk menghubungkan aplikasi Java dengan PostgreSQL menggunakan JDBC, kita memer
      - Kemudian, pilih file PostgreSQL Database Driver seperti `postgresql-42.7.3.jar`.
      - Info lengkap ada [disini](https://postgresqltutorial.com/postgresql-jdbc/connecting-to-postgresql-database)
 
-## Membaut File Konfigurasi Database
+## Membuat File Konfigurasi Database
 
 Untuk melakukan koneksi ke database, kita harus memberi tahu jenis database, host, post, username, dan password untuk terkoneksi ke database.
 
