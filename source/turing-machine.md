@@ -204,7 +204,7 @@ $\underline{a}0011\:\vdash  X\underline{b}011\:\vdash  X0\underline{b}11\:\vdash
 
 ## Unrestricted Grammar -> Mesin Turing
 
-Misalkan `w` adalah kalimat yang dihasilkan oleh tata Bahasa $G=(N,T,S,P)$. Mesin Turing $M$ yang menerima `w` bekerja dengan cara mensimulasikan proses penurunan `w` dari simbol awal $S$ oleh tata bahasa $G$. Input awal yang dibaca oleh $M$ adalah $w # S\#$. $M$ menerapkan aturan produksi yang ada di $P$ dengan mengubah string yang terletak di antara `#` sehingga pita masukan suatu saat diperoleh $w\#w\#$.
+Misalkan `w` adalah kalimat yang dihasilkan oleh tata Bahasa $G=(N,T,S,P)$. Mesin Turing $M$ yang menerima `w` bekerja dengan cara mensimulasikan proses penurunan `w` dari simbol awal $S$ oleh tata bahasa $G$. Input awal yang dibaca oleh $M$ adalah $w \# S\#$. $M$ menerapkan aturan produksi yang ada di $P$ dengan mengubah string yang terletak di antara `#` sehingga pita masukan suatu saat diperoleh $w\\#w\\#$.
 
 Contoh:
 
