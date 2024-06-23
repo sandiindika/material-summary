@@ -52,7 +52,7 @@ $$
 Mesin Turing $M$ akan digunakan untuk mengenali bahasa $L=\{0^n1^n|n\geq1\}$. Contoh string di dalam L misalnya: 01, 0011, 000111, 00001111, dan seterusnya.
 
 <p align="center">
-<img src="/images/turing_machine/pita-awal.png" alt="Pita Awal">
+<img src="/images/turing_machine/pita_awal.png" alt="Pita Awal">
 </p>
 
 Cara kerja mesin Turing untuk mengenali bahasa $L$ dinyatakan dengan algoritma berikut:
@@ -73,13 +73,13 @@ Syarat:
 **String masukan adalah 000111**
 
 <p align="center">
-<img src="/images/turing_machine/string-masukan.png" alt="String Masukan">
+<img src="/images/turing_machine/string_masukan.png" alt="String Masukan">
 </p>
 
 Model Kerja:
 
 <p align="center">
-<img src="/images/turing_machine/cara-kerja.png" alt="Cara Kerja Turing Machine">
+<img src="/images/turing_machine/cara_kerja.png" alt="Cara Kerja Turing Machine">
 </p>
 
 Pada gambar, terlihat ada lima modus kerja yang berbeda dari mesin Turing:
@@ -227,6 +227,6 @@ $aaaa \\# S \\# \Rightarrow aaaa \\# ACaB \\# \Rightarrow aaaa \\# AaaCB \Righta
 $aaaa \\# ADaaB \\# \Rightarrow aaaa \\# ACaaB \\# \Rightarrow aaaa \\# AaaCaB \\# \Rightarrow aaaa \\# AaaaaCB \\# \Rightarrow aaaa \\# AaaaaE \\# \Rightarrow$
 $aaaa \\# AaaaEa \\# \Rightarrow aaaa \\# AaaEaa \\# \Rightarrow aaaa \\# AaEaaa \\# \Rightarrow aaaa \\# AEaaaa \\# \Rightarrow aaaa \\# aaaa \\#$
 
-## Source:
+## Source
 
 - [bringITonUNPAS](https://youtube.com/@bringitonunpas4027)

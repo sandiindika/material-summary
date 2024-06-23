@@ -267,6 +267,6 @@ Saat project kita sudah besar, kadang kita sering menggunakan banyak dependency.
 
 Mode detail: https://youtu.be/VYA7NzIZFdg?t=3646
 
-## Source:
+## Source
 
 - [Programmer Zaman Now](https://github.com/ProgrammerZamanNow)

@@ -323,6 +323,6 @@ Kita dapat menavigasi melalui baris-baris data dalam `ResultSet` dengan mengguna
 
 Data dalam `ResultSet` dapat diambil menggunakan metode getter yang sesuai dengan tipe data kolom, seperti `getInt()`, `getString()`, dan lain-lain. Kita bisa mengambil data berdasarkan indeks kolom (dimulai dari 1) atau nama kolom.
 
-## Source:
+## Source
 
 - [Programmer Zaman Now](https://github.com/ProgrammerZamanNow)
