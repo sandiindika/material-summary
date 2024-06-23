@@ -204,7 +204,7 @@ $\underline{a}0011\:\vdash  X\underline{b}011\:\vdash  X0\underline{b}11\:\vdash
 
 ## Unrestricted Grammar -> Mesin Turing
 
-Misalkan `w` adalah kalimat yang dihasilkan oleh tata Bahasa $G=(N,T,S,P)$. Mesin Turing $M$ yang menerima `w` bekerja dengan cara mensimulasikan proses penurunan `w` dari simbol awal $S$ oleh tata bahasa $G$. Input awal yang dibaca oleh $M$ adalah $w \\# S\\#$. $M$ menerapkan aturan produksi yang ada di $P$ dengan mengubah string yang terletak di antara `#` sehingga pita masukan suatu saat diperoleh $w\#w\#$.
+Misalkan `w` adalah kalimat yang dihasilkan oleh tata Bahasa $G=(N,T,S,P)$. Mesin Turing $M$ yang menerima `w` bekerja dengan cara mensimulasikan proses penurunan `w` dari simbol awal $S$ oleh tata bahasa $G$. Input awal yang dibaca oleh $M$ adalah $w \\\# S\\\#$. $M$ menerapkan aturan produksi yang ada di $P$ dengan mengubah string yang terletak di antara `#` sehingga pita masukan suatu saat diperoleh $w\\#w\\#$.
 
 Contoh:
 
@@ -219,11 +219,11 @@ Contoh:
 
 Misal:
 
-$aaaa \# S \#$
+$aaaa \\# S \\#$
 
 Maka:
 
-$ aaaa \# S \# \Rightarrow aaaa \# ACaB \# \Rightarrow aaaa \# AaaCB \Rightarrow aaaa \# AaaDB \# \Rightarrow aaaa \# AaDaB \# \Rightarrow aaaa \# ADaaB \# \Rightarrow aaaa \# ACaaB \# \Rightarrow aaaa \# AaaCaB \# \Rightarrow aaaa \# AaaaaCB \# \Rightarrow aaaa \# AaaaaE \# \Rightarrow aaaa \# AaaaEa \# \Rightarrow aaaa \# AaaEaa \# \Rightarrow aaaa \# AaEaaa \# \Rightarrow aaaa \# AEaaaa \# \Rightarrow aaaa \# aaaa \# $
+$ aaaa \\# S \\# \Rightarrow aaaa \\# ACaB \\# \Rightarrow aaaa \\# AaaCB \Rightarrow aaaa \\# AaaDB \\# \Rightarrow aaaa \\# AaDaB \\# \Rightarrow aaaa \\# ADaaB \\# \Rightarrow aaaa \\# ACaaB \\# \Rightarrow aaaa \\# AaaCaB \\# \Rightarrow aaaa \\# AaaaaCB \\# \Rightarrow aaaa \\# AaaaaE \\# \Rightarrow aaaa \\# AaaaEa \\# \Rightarrow aaaa \\# AaaEaa \\# \Rightarrow aaaa \\# AaEaaa \\# \Rightarrow aaaa \\# AEaaaa \\# \Rightarrow aaaa \\# aaaa \\# $
 
 ## Source:
 
