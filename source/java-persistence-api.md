@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Java Persistence API</h1>
+<h1 align="center" style="text-align: center;">Java Persistence API</h1>
 
 ## Apa itu JPA?
 

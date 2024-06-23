@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Java Apache Maven</h1>
+<h1 align="center" style="text-align: center;">Java Apache Maven</h1>
 
 ## Pengenalan Build Automation
 

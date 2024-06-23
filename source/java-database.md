@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Java Database</h1>
+<h1 align="center" style="text-align: center;">Java Database</h1>
 
 ## Pengenalan JDBC
 
