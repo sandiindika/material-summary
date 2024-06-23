@@ -47,11 +47,37 @@ $$
 - $B$ = simbol blank, $B \in \Gamma$
 - $F$ = himpunan final state, $F \subseteq Q$
 
-contoh:
+## Contoh
 
-> Mesin Turing $M$ akan digunakan untuk mengenali bahasa $L=\{0^n1^n|n\geq1\}$.
-> Contoh string di dalam L misalnya: 01, 0011, 000111, 00001111, dan seterusnya.
+Mesin Turing $M$ akan digunakan untuk mengenali bahasa $L=\{0^n1^n|n\geq1\}$. Contoh string di dalam L misalnya: 01, 0011, 000111, 00001111, dan seterusnya.
 
 <p align="center">
 <img src="/images/turing_machine/pita-awal.png" alt="Pita Awal">
+</p>
+
+Cara kerja mesin Turing untuk mengenali bahasa $L$ dinyatakan dengan algoritma berikut:
+
+1. Ganti simbol `0` paling kiri dengan simbol `X`.
+2. Gerakkan _Head_ ke kanan hingga dijumpai simbol `1`.
+3. Ganti simbol `1` paling kiri dengan simbol `Y`.
+4. Gerakkan _Head_ ke kiri hingga dijumpai simbol `X`.
+5. Gerakkan _Head_ ke kanan (hingga menemukan simbol `0`). Kemudian, ganti simbol `0` paling kiri dengan simbol `X`.
+6. Kemudian kembali ke langkah no 2, dan seterusnya.
+
+Syarat:
+
+- Jika pada saat bergerak ke kanan untuk mencari `1`, mesin Turing `M` menjumpai simbol `B`, maka berarti banyaknya `0` lebih dari banyaknya `1`. Kesimpulannya, string masukan tidak dikenali.
+- Jika pada saat bergerak ke kiri `M` tidak menjumpai lagi `0`, maka `M` akan memeriksan apakah masih ada `1`. Bila habis maka string diterima (dikenali).
+- Jika sebuah string diterima (dikenali), maka mesin Turing `M` berhenti. Untuk string yang tidak dikenali (ditolak) ada kemungkinan `M` tidak berhenti (looping).
+
+**String masukan adalah 000111**
+
+<p align="center">
+<img src="/images/turing_machine/string-masukan.png" alt="String Masukan">
+</p>
+
+Model Kerja
+
+<p align="center">
+<img src="/images/turing_machine/cara-kerja.png" alt="Cara Kerja Turing Machine">
 </p>
