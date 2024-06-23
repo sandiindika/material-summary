@@ -17,8 +17,8 @@ Pada keadaan awal, $n$ sel pertama dari pita masukan berisi rangkaian simbol yan
 
 ## Perbedaan Mesin Turing dengan FSA dan PDA
 
-| FSA/PDA | Mesin Turing |
-|:---|:---|
+| FSA/PDA                                  | Mesin Turing                                                                                    |
+| :--------------------------------------- | :---------------------------------------------------------------------------------------------- |
 | Pita masukan hanya dapat dibaca          | Pita masukan dapat dibaca dan ditulis                                                           |
 | _Head_ hanya dapat digerakkan ke kanan   | _Head_ dapat digerakkan ke kanan maupun kiri                                                    |
 | Pita masukan hanya berisi string masukan | Pita masukan juga berfungsi sebagai tempat penyimpanan yang pada pengaksesannya tidak dibatasi. |
@@ -84,34 +84,34 @@ Model Kerja:
 
 Pada gambar, terlihat ada lima modus kerja yang berbeda dari mesin Turing:
 
-| State | Action | Description |
-|:---:|:---:|:---|
-| a | Find 0 | Find symbol `0` |
-| b | Find 1 | Find symbol `1` in the right |
-| c | Find X | Find symbol `X` in the left |
-| d | Remain | Check the remaining symbols on the input tape |
+| State | Action | Description                                   |
+| :---: | :----: | :-------------------------------------------- |
+|   a   | Find 0 | Find symbol `0`                               |
+|   b   | Find 1 | Find symbol `1` in the right                  |
+|   c   | Find X | Find symbol `X` in the left                   |
+|   d   | Remain | Check the remaining symbols on the input tape |
 
 Dalam setiap modus kerja (state), aksi yang dilakukan mesin Turing mungkin menerima/membaca berbagai simbol pada pita. Aksi yang dilakukan dalam setiap modus kerja (state) dapat berbeda-beda.
 
 Sehingga dapat dibuat tabel transisi seperti berikut:
 
-| | 0 | 1 | X | Y | B |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| Find 0 (State a) | State b, Write `X`, Move Right | | | State d, Move Right | |
-| Find 1 (State b) | Move Right | State c, Write `Y`, Move :eft | | Move Right | |
-| Find X (State c) | Move Left | | State a, Move Right | Move Left | |
-| Remain (State d) | | | | Move Right | State *e (empty)*, Move Right |
+|                  |               0                |               1               |          X          |          Y          |               B               |
+| :--------------: | :----------------------------: | :---------------------------: | :-----------------: | :-----------------: | :---------------------------: |
+| Find 0 (State a) | State b, Write `X`, Move Right |                               |                     | State d, Move Right |                               |
+| Find 1 (State b) |           Move Right           | State c, Write `Y`, Move :eft |                     |     Move Right      |                               |
+| Find X (State c) |           Move Left            |                               | State a, Move Right |      Move Left      |                               |
+| Remain (State d) |                                |                               |                     |     Move Right      | State _e (empty)_, Move Right |
 
 Notasi yang lebih ringkas:
 
-Dengan penulisan *Tripel* $(q, a, D)$ menyatakan aksi bahwa mesin berubah ke state $q$, menuliskan/membaca simbol $a$, dan menggerakkan $Head$ ke arah $D$.
+Dengan penulisan _Tripel_ $(q, a, D)$ menyatakan aksi bahwa mesin berubah ke state $q$, menuliskan/membaca simbol $a$, dan menggerakkan $Head$ ke arah $D$.
 
-| | 0 | 1 | X | Y | B |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| a | $(b, X, R)$ | | | $(d, Y, R)$ | |
-| b | $(b, 0, R)$ | $(c, Y, L)$ | | $(b, Y, R)$ | |
-| c | $(c, 0, L)$ | | $(a, X, R)$ | $(c, Y, L)$ | |
-| d | | | | $(d, Y, R)$ | $(e, B, R)$ |
+|     |      0      |      1      |      X      |      Y      |      B      |
+| :-: | :---------: | :---------: | :---------: | :---------: | :---------: |
+|  a  | $(b, X, R)$ |             |             | $(d, Y, R)$ |             |
+|  b  | $(b, 0, R)$ | $(c, Y, L)$ |             | $(b, Y, R)$ |             |
+|  c  | $(c, 0, L)$ |             | $(a, X, R)$ | $(c, Y, L)$ |             |
+|  d  |             |             |             | $(d, Y, R)$ | $(e, B, R)$ |
 
 Dengan menggunakan notasi formalnya, maka mesin Turing pengenal bahasa $L = \{0^n1^n | n\geq1\}$ dapat ditulis sebagai berikut:
 
@@ -145,16 +145,16 @@ Keadaan sebuah Mesin Turing setiap saat dicirikan oleh tiga hal:
 
 1. State sekarang ($q$)
 2. Simbol yang sedang diterima/dibaca
-3. Posisi *Head* ("nomor sel" yang sedang dibaca) pada pita.
+3. Posisi _Head_ ("nomor sel" yang sedang dibaca) pada pita.
 
 ||||
-|:---:|:---:|---|
+|:---:|:---:\vdash --|
 | | $\longleftarrow \alpha_2$ | $\longrightarrow$ |
 | $\alpha_1$ | a | $\beta$ |
 | | $\uparrow$ | |
 | | q | |
 
-Jika $\alpha_2 = a\beta$, maka konfigurasi sesaat mesin Turing pada gambar di atas dapat dinyatakan secara tekstual oleh deskripsi sesaat (*instantaneous description*):
+Jika $\alpha_2 = a\beta$, maka konfigurasi sesaat mesin Turing pada gambar di atas dapat dinyatakan secara tekstual oleh deskripsi sesaat (_instantaneous description_):
 
 $$
 \alpha_1 q \alpha_2
@@ -166,22 +166,24 @@ yang artinya:
 - $\alpha_1\alpha_2$ adalah string yang tertera pada pita
 - mesin sedang membaca simbol paling kiri dari $\alpha_2$
 
-Saat membuat deskripsi sesaat, kita memerlukan notasi formal dengan menggunakan tanda `|-` sebagai pemisah, dan tanda `_` sebagai tuntunan state (*Head*).
+Saat membuat deskripsi sesaat, kita memerlukan notasi formal dengan menggunakan tanda $\vdash $ sebagai pemisah, dan tanda $\_$ sebagai tuntunan state (_Head_).
 
 > Contoh gerakan ke kiri oleh $\delta(p, Xi)=(q, Y, L):$ <br/>
+>
 > $$
-> X_1X_2...X_{i-1}\:\underline p\:X_iX_{i+1}...X_n|-X_1X_2...\:\underline q\:X_{i-1}YX_{i+1}...X_n
+> X_1X_2...X_{i-1}\:\underline{p}\:X_iX_{i+1}...X_n\vdash X_1X_2...\:\underline{q}\:X_{i-1}YX_{i+1}...X_n
 > $$
 
 > Contoh gerakan ke kanan oleh $\delta(p, Xi)=(q, Y, R):$ <br/>
+>
 > $$
-> X_1X_2...X_{i-1}\:\underline p\:X_iX_{i+1}...X_n|-X_1X_2...X_{i-1}Y\:\underline q\:X_{i+1}...X_n
+> X_1X_2...X_{i-1}\:\underline{p}\:X_iX_{i+1}...X_n\vdash X_1X_2...X_{i-1}Y\:\underline{q}\:X_{i+1}...X_n
 > $$
 
 Sebuah string (kalimat) diterima oleh mesin Turing. $M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)$, jika mesin tersebut mencapai status akhir. Dengan kata lain, suatu kalimat `w` diterima oleh $M$ jika terdapat rangkaian deskripsi sesaat:
 
 $$
-q_0\:w|-a_1\:p\:a_2
+q_0\:w\vdash a_1\:p\:a_2
 $$
 
 yang dalam hal ini $p\in F\:dan\:a_1\:a_2\in\Gamma^\ast$
@@ -198,11 +200,11 @@ Gunakan tabel transisi yang telah dibuat sebelumnya.
 
 Maka komputasi String `0011` pada mesin turing:
 
-$\underline a0011\:|- X\underline b011\:|- X0\underline b11\:|- X\underline c0Y1\:|- \underline cX0Y1\:|- X\underline a0Y1\:|- XX\underline bY1\:|- XXY\underline b1\:|- XX\underline cYY\:|- X\underline cXYY\:|- XX\underline aYY\:|- XXY\underline dY\:|- XXYY\underline d\:|- XXYYB\underline e \quad (Diterima)$
+$\underline{a}0011\:\vdash  X\underline{b}011\:\vdash  X0\underline{b}11\:\vdash  X\underline{c}0Y1\:\vdash  \underline{c}X0Y1\:\vdash  X\underline{a}0Y1\:\vdash  XX\underline{b}Y1\:\vdash  XXY\underline{b}1\:\vdash  XX\underline{c}YY\:\vdash  X\underline{c}XYY\:\vdash  XX\underline{a}YY\:\vdash  XXY\underline{d}Y\:\vdash  XXYY\underline{d}\:\vdash  XXYYB\underline{e} \quad (Diterima)$
 
 ## Unrestricted Grammar -> Mesin Turing
 
-Misalkan `w` adalah kalimat yang dihasilkan oleh tata Bahasa $G=(N,T,S,P)$. Mesin Turing $M$ yang menerima `w` bekerja dengan cara mensimulasikan proses penurunan `w` dari simbol awal $S$ oleh tata bahasa $G$. Input awal yang dibaca oleh $M$ adalah $w\#S\#$. $M$ menerapkan aturan produksi yang ada di $P$ dengan mengubah string yang terletak di antara `#` sehingga pita masukan suatu saat diperoleh $w\#w\#$.
+Misalkan `w` adalah kalimat yang dihasilkan oleh tata Bahasa $G=(N,T,S,P)$. Mesin Turing $M$ yang menerima `w` bekerja dengan cara mensimulasikan proses penurunan `w` dari simbol awal $S$ oleh tata bahasa $G$. Input awal yang dibaca oleh $M$ adalah $w # S\#$. $M$ menerapkan aturan produksi yang ada di $P$ dengan mengubah string yang terletak di antara `#` sehingga pita masukan suatu saat diperoleh $w\#w\#$.
 
 Contoh:
 
