@@ -147,12 +147,12 @@ Keadaan sebuah Mesin Turing setiap saat dicirikan oleh tiga hal:
 2. Simbol yang sedang diterima/dibaca
 3. Posisi _Head_ ("nomor sel" yang sedang dibaca) pada pita.
 
-||||
-|:---:|:---:\vdash --|
-| | $\longleftarrow \alpha_2$ | $\longrightarrow$ |
-| $\alpha_1$ | a | $\beta$ |
-| | $\uparrow$ | |
-| | q | |
+|            |                           |                   |
+| :--------: | :-----------------------: | ----------------- |
+|            | $\longleftarrow \alpha_2$ | $\longrightarrow$ |
+| $\alpha_1$ |             a             | $\beta$           |
+|            |        $\uparrow$         |                   |
+|            |             q             |                   |
 
 Jika $\alpha_2 = a\beta$, maka konfigurasi sesaat mesin Turing pada gambar di atas dapat dinyatakan secara tekstual oleh deskripsi sesaat (_instantaneous description_):
 
@@ -204,7 +204,7 @@ $\underline{a}0011\:\vdash  X\underline{b}011\:\vdash  X0\underline{b}11\:\vdash
 
 ## Unrestricted Grammar -> Mesin Turing
 
-Misalkan `w` adalah kalimat yang dihasilkan oleh tata Bahasa $G=(N,T,S,P)$. Mesin Turing $M$ yang menerima `w` bekerja dengan cara mensimulasikan proses penurunan `w` dari simbol awal $S$ oleh tata bahasa $G$. Input awal yang dibaca oleh $M$ adalah $w \# S\#$. $M$ menerapkan aturan produksi yang ada di $P$ dengan mengubah string yang terletak di antara `#` sehingga pita masukan suatu saat diperoleh $w\\#w\\#$.
+Misalkan `w` adalah kalimat yang dihasilkan oleh tata Bahasa $G=(N,T,S,P)$. Mesin Turing $M$ yang menerima `w` bekerja dengan cara mensimulasikan proses penurunan `w` dari simbol awal $S$ oleh tata bahasa $G$. Input awal yang dibaca oleh $M$ adalah $w \# S\#$. $M$ menerapkan aturan produksi yang ada di $P$ dengan mengubah string yang terletak di antara `#` sehingga pita masukan suatu saat diperoleh $w\#w\#$.
 
 Contoh:
 
