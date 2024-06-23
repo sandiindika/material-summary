@@ -25,11 +25,11 @@ Pada keadaan awal, $n$ sel pertama dari pita masukan berisi rangkaian simbol yan
 
 ## Aksi Mesin Turing
 
-Perilaku mesin Turing bergantung pada simbol masukan yang berada pada posisi *Head*, baca/tulis dan status dari *Finite Control*. Dalam setiap gerakannya, mesin Turing dapat melakukan salah satu dari aksi berikut:
+Perilaku mesin Turing bergantung pada simbol masukan yang berada pada posisi _Head_, baca/tulis dan status dari _Finite Control_. Dalam setiap gerakannya, mesin Turing dapat melakukan salah satu dari aksi berikut:
 
 - Berubah status.
 - Menuliskan simbol pada pita masukan. Aksi penulisan ini mengubah simbol yang sebelumnya berada pada sel tersebut.
-- Menggerakkan *Head* ke kiri atau ke kanan.
+- Menggerakkan _Head_ ke kiri atau ke kanan.
 
 ## Definisi Formal Mesin Turing
 
@@ -53,5 +53,5 @@ contoh:
 > Contoh string di dalam L misalnya: 01, 0011, 000111, 00001111, dan seterusnya.
 
 <p align="center">
-<img src="/images/turing_machine/pita-awal.png" alt="San">
+<img src="/images/turing_machine/pita-awal.png" alt="Pita Awal">
 </p>

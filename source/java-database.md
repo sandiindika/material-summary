@@ -6,7 +6,9 @@ JDBC (Java Database Connectivity) merupakan spesifikasi API standar untuk mengak
 
 ## Cara Kerja JDBC
 
-![Cara Kerja JDBC](/images/java_database/cara_kerja_jdbc.png)
+<p align="center">
+<img src="/images/java_database/cara_kerja_jdbc.png" alt="Cara Kerja JDBC">
+</p>
 
 Dari aplikasi (app) yang dibuat menggunakan Java lalu terhubung ke JDBC yang kemudian menggunakan Driver untuk terhubung ke database, tergantung dengan jenis databasenya.
 
@@ -203,7 +205,9 @@ Connection Pool adalah konsep dimana dibanding kita membuat koneksi baru setiap 
 
 Jika semua Connection sedang terpakai semua, ketika ada request yang butuh koneksi lagi, request tersebut diminta untuk menunggu terlebih dahulu, dengan demikian penggunaan memory untuk Connection tidak akan terlalu bengkak. Connection Pool di JDBC direpresentasikan dengan interface `javax.sql.DataSource`.
 
-![Konsep Connection Pool](/images/java_database/connection_pool.png)
+<p align="center">
+<img src="/images/java_database/connection_pool.png" alt="Konsep Connection Pool">
+</p>
 
 Setiap user akan meminjam Connection ke Connection Pool untuk terhubung ke Database. Jika user selesai menggunakan Connection, maka Connection tersebut akan dikembalikan ke Connection Pool.
 
