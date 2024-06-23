@@ -8,7 +8,7 @@ JDBC (Java Database Connectivity) merupakan spesifikasi API standar untuk mengak
 
 ![Cara Kerja JDBC](/images/java_database/cara_kerja_jdbc.png)
 
-Dari aplikasi (APP) yang dibuat menggunakan Java lalu terhubung ke JDBC yang kemudian menggunakan Driver untuk terhubung ke database, tergantung dengan jenis databasenya.
+Dari aplikasi (app) yang dibuat menggunakan Java lalu terhubung ke JDBC yang kemudian menggunakan Driver untuk terhubung ke database, tergantung dengan jenis databasenya.
 
 ## JUnit 5
 
