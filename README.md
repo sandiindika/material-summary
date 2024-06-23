@@ -8,5 +8,5 @@
 
 ## Teori Komputasi
 
-- [Concepts of Language and Automata](/source/concepts-of-language-and-automata.md)
-- [Turing Machine](/source/turing-machine.md)
+- [Konsep Bahasa dan Automata](/source/concepts-of-language-and-automata.md)
+- [Mesin Turing](/source/turing-machine.md)
