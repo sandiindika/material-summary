@@ -223,7 +223,10 @@ $aaaa \\# S \\#$
 
 Maka:
 
-$aaaa \\# S \\# \Rightarrow aaaa \\# ACaB \\# \Rightarrow aaaa \\# AaaCB \Rightarrow aaaa \\# AaaDB \\# \Rightarrow aaaa \\# AaDaB \\# \Rightarrow aaaa \\# ADaaB \\# \Rightarrow aaaa \\# ACaaB \\# \Rightarrow aaaa \\# AaaCaB \\# \Rightarrow aaaa \\# AaaaaCB \\# \Rightarrow aaaa \\# AaaaaE \\# \Rightarrow aaaa \\# AaaaEa \\# \Rightarrow aaaa \\# AaaEaa \\# \Rightarrow aaaa \\# AaEaaa \\# \Rightarrow aaaa \\# AEaaaa \\# \Rightarrow aaaa \\# aaaa \\#$
+$aaaa \\# S \\# \Rightarrow aaaa \\# ACaB \\# \Rightarrow aaaa \\# AaaCB \Rightarrow aaaa \\# AaaDB \\# \Rightarrow$
+$aaaa \\# AaDaB \\# \Rightarrow aaaa \\# ADaaB \\# \Rightarrow aaaa \\# ACaaB \\# \Rightarrow aaaa \\# AaaCaB \\# \Rightarrow$
+$aaaa \\# AaaaaCB \\# \Rightarrow aaaa \\# AaaaaE \\# \Rightarrow aaaa \\# AaaaEa \\# \Rightarrow aaaa \\# AaaEaa \\# \Rightarrow$
+$aaaa \\# AaEaaa \\# \Rightarrow aaaa \\# AEaaaa \\# \Rightarrow aaaa \\# aaaa \\#$
 
 ## Source:
 
