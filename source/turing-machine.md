@@ -166,7 +166,7 @@ yang artinya:
 - $\alpha_1\alpha_2$ adalah string yang tertera pada pita
 - mesin sedang membaca simbol paling kiri dari $\alpha_2$
 
-Saat membuat deskripsi sesaat, kita memerlukan notasi formal dengan menggunakan tanda $\vdash$ sebagai pemisah, dan tanda _ sebagai tuntunan state (_Head_).
+Saat membuat deskripsi sesaat, kita memerlukan notasi formal dengan menggunakan tanda $\vdash$ sebagai pemisah, dan tanda _ sebagai tuntunan state (\_Head_).
 
 > Contoh gerakan ke kiri oleh $\delta(p, Xi)=(q, Y, L):$ <br/>
 >
@@ -223,7 +223,7 @@ $aaaa \\# S \\#$
 
 Maka:
 
-$ aaaa \\# S \\# \Rightarrow aaaa \\# ACaB \\# \Rightarrow aaaa \\# AaaCB \Rightarrow aaaa \\# AaaDB \\# \Rightarrow aaaa \\# AaDaB \\# \Rightarrow aaaa \\# ADaaB \\# \Rightarrow aaaa \\# ACaaB \\# \Rightarrow aaaa \\# AaaCaB \\# \Rightarrow aaaa \\# AaaaaCB \\# \Rightarrow aaaa \\# AaaaaE \\# \Rightarrow aaaa \\# AaaaEa \\# \Rightarrow aaaa \\# AaaEaa \\# \Rightarrow aaaa \\# AaEaaa \\# \Rightarrow aaaa \\# AEaaaa \\# \Rightarrow aaaa \\# aaaa \\# $
+$aaaa \\# S \\# \Rightarrow aaaa \\# ACaB \\# \Rightarrow aaaa \\# AaaCB \Rightarrow aaaa \\# AaaDB \\# \Rightarrow aaaa \\# AaDaB \\# \Rightarrow aaaa \\# ADaaB \\# \Rightarrow aaaa \\# ACaaB \\# \Rightarrow aaaa \\# AaaCaB \\# \Rightarrow aaaa \\# AaaaaCB \\# \Rightarrow aaaa \\# AaaaaE \\# \Rightarrow aaaa \\# AaaaEa \\# \Rightarrow aaaa \\# AaaEaa \\# \Rightarrow aaaa \\# AaEaaa \\# \Rightarrow aaaa \\# AEaaaa \\# \Rightarrow aaaa \\# aaaa \\#$
 
 ## Source:
 
