@@ -17,8 +17,8 @@ Pada keadaan awal, $n$ sel pertama dari pita masukan berisi rangkaian simbol yan
 
 ## Perbedaan Mesin Turing dengan FSA dan PDA
 
-| FSA/PDA                                  | Mesin Turing                                                                                    |
-| ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| FSA/PDA | Mesin Turing |
+|:---|:---|
 | Pita masukan hanya dapat dibaca          | Pita masukan dapat dibaca dan ditulis                                                           |
 | _Head_ hanya dapat digerakkan ke kanan   | _Head_ dapat digerakkan ke kanan maupun kiri                                                    |
 | Pita masukan hanya berisi string masukan | Pita masukan juga berfungsi sebagai tempat penyimpanan yang pada pengaksesannya tidak dibatasi. |
@@ -36,13 +36,13 @@ Perilaku mesin Turing bergantung pada simbol masukan yang berada pada posisi _He
 Sebuah mesin Turing $M$ dilambangkan dengan notasi formal sebagai berikut:
 
 $$
-M = (Q, \Sigma, \Gamma, \Delta, S, B, F)
+M = (Q, \Sigma, \Gamma, \delta, S, B, F)
 $$
 
 - $Q$ = himpunan state
 - $\Sigma$ = himpunan simbol input, termasuk $B$
 - $\Gamma$ = simbol-simbol yang muncul di pita, termasuk $\Sigma$
-- $\Delta$ = fungsi transisi yang memetakan $Q \times \Gamma \to Q \times \Gamma \times \{L, R\}$
+- $\delta$ = fungsi transisi yang memetakan $Q \times \Gamma \to Q \times \Gamma \times \{L, R\}$
 - $S$ = state awal, $S \in Q$
 - $B$ = simbol blank, $B \in \Gamma$
 - $F$ = himpunan final state, $F \subseteq Q$
@@ -76,8 +76,156 @@ Syarat:
 <img src="/images/turing_machine/string-masukan.png" alt="String Masukan">
 </p>
 
-Model Kerja
+Model Kerja:
 
 <p align="center">
 <img src="/images/turing_machine/cara-kerja.png" alt="Cara Kerja Turing Machine">
 </p>
+
+Pada gambar, terlihat ada lima modus kerja yang berbeda dari mesin Turing:
+
+| State | Action | Description |
+|:---:|:---:|:---|
+| a | Find 0 | Find symbol `0` |
+| b | Find 1 | Find symbol `1` in the right |
+| c | Find X | Find symbol `X` in the left |
+| d | Remain | Check the remaining symbols on the input tape |
+
+Dalam setiap modus kerja (state), aksi yang dilakukan mesin Turing mungkin menerima/membaca berbagai simbol pada pita. Aksi yang dilakukan dalam setiap modus kerja (state) dapat berbeda-beda.
+
+Sehingga dapat dibuat tabel transisi seperti berikut:
+
+| | 0 | 1 | X | Y | B |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| Find 0 (State a) | State b, Write `X`, Move Right | | | State d, Move Right | |
+| Find 1 (State b) | Move Right | State c, Write `Y`, Move :eft | | Move Right | |
+| Find X (State c) | Move Left | | State a, Move Right | Move Left | |
+| Remain (State d) | | | | Move Right | State *e (empty)*, Move Right |
+
+Notasi yang lebih ringkas:
+
+Dengan penulisan *Tripel* $(q, a, D)$ menyatakan aksi bahwa mesin berubah ke state $q$, menuliskan/membaca simbol $a$, dan menggerakkan $Head$ ke arah $D$.
+
+| | 0 | 1 | X | Y | B |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| a | $(b, X, R)$ | | | $(d, Y, R)$ | |
+| b | $(b, 0, R)$ | $(c, Y, L)$ | | $(b, Y, R)$ | |
+| c | $(c, 0, L)$ | | $(a, X, R)$ | $(c, Y, L)$ | |
+| d | | | | $(d, Y, R)$ | $(e, B, R)$ |
+
+Dengan menggunakan notasi formalnya, maka mesin Turing pengenal bahasa $L = \{0^n1^n | n\geq1\}$ dapat ditulis sebagai berikut:
+
+$M = (Q, \Sigma, \Gamma, \delta, S, B, F)$
+
+yang dalam hal ini,
+
+- $Q$ = $\{a, b, c, d, e\}$
+- $\Sigma$ = $\{0, 1, B\}$
+- $\Gamma$ = $\{0, 1, X, Y, B\}$
+- $S$ = $a$
+- $B$ = $B$
+- $F$ = $\{e\}$
+
+Sehingga dihasilkan fungsi transisi ($\delta$) berikut:
+
+$\delta(a, 0) = (b, X, R);$ <br />
+$\delta(a, Y) = (d, Y, R);$ <br />
+$\delta(b, 0) = (b, 0, R);$ <br />
+$\delta(b, 1) = (c, Y, L);$ <br />
+$\delta(b, Y) = (b, Y, R);$ <br />
+$\delta(c, 0) = (c, 0, L);$ <br />
+$\delta(c, X) = (a, X, R);$ <br />
+$\delta(c, Y) = (c, Y, L);$ <br />
+$\delta(d, Y) = (d, Y, R);$ <br />
+$\delta(d, B) = (e, B, R);$ <br />
+
+## Deskripsi Sesaat/Seketika
+
+Keadaan sebuah Mesin Turing setiap saat dicirikan oleh tiga hal:
+
+1. State sekarang ($q$)
+2. Simbol yang sedang diterima/dibaca
+3. Posisi *Head* ("nomor sel" yang sedang dibaca) pada pita.
+
+||||
+|:---:|:---:|---|
+| | $\longleftarrow \alpha_2$ | $\longrightarrow$ |
+| $\alpha_1$ | a | $\beta$ |
+| | $\uparrow$ | |
+| | q | |
+
+Jika $\alpha_2 = a\beta$, maka konfigurasi sesaat mesin Turing pada gambar di atas dapat dinyatakan secara tekstual oleh deskripsi sesaat (*instantaneous description*):
+
+$$
+\alpha_1 q \alpha_2
+$$
+
+yang artinya:
+
+- mesin sedang berada pada state q
+- $\alpha_1\alpha_2$ adalah string yang tertera pada pita
+- mesin sedang membaca simbol paling kiri dari $\alpha_2$
+
+Saat membuat deskripsi sesaat, kita memerlukan notasi formal dengan menggunakan tanda `|-` sebagai pemisah, dan tanda `_` sebagai tuntunan state (*Head*).
+
+> Contoh gerakan ke kiri oleh $\delta(p, Xi)=(q, Y, L):$ <br/>
+> $$
+> X_1X_2...X_{i-1}\:\underline p\:X_iX_{i+1}...X_n|-X_1X_2...\:\underline q\:X_{i-1}YX_{i+1}...X_n
+> $$
+
+> Contoh gerakan ke kanan oleh $\delta(p, Xi)=(q, Y, R):$ <br/>
+> $$
+> X_1X_2...X_{i-1}\:\underline p\:X_iX_{i+1}...X_n|-X_1X_2...X_{i-1}Y\:\underline q\:X_{i+1}...X_n
+> $$
+
+Sebuah string (kalimat) diterima oleh mesin Turing. $M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)$, jika mesin tersebut mencapai status akhir. Dengan kata lain, suatu kalimat `w` diterima oleh $M$ jika terdapat rangkaian deskripsi sesaat:
+
+$$
+q_0\:w|-a_1\:p\:a_2
+$$
+
+yang dalam hal ini $p\in F\:dan\:a_1\:a_2\in\Gamma^\ast$
+
+## Contoh
+
+- $Q = \{a, b, c, d, e\}$
+- $\Gamma = \{0, 1, X, Y, B\}$
+- $\Sigma = \{0, 1, B\}$
+- $q_0 = a$
+- $F = \{e\}$
+
+Gunakan tabel transisi yang telah dibuat sebelumnya.
+
+Maka komputasi String `0011` pada mesin turing:
+
+$\underline a0011\:|- X\underline b011\:|- X0\underline b11\:|- X\underline c0Y1\:|- \underline cX0Y1\:|- X\underline a0Y1\:|- XX\underline bY1\:|- XXY\underline b1\:|- XX\underline cYY\:|- X\underline cXYY\:|- XX\underline aYY\:|- XXY\underline dY\:|- XXYY\underline d\:|- XXYYB\underline e \quad (Diterima)$
+
+## Unrestricted Grammar -> Mesin Turing
+
+Misalkan `w` adalah kalimat yang dihasilkan oleh tata Bahasa $G=(N,T,S,P)$. Mesin Turing $M$ yang menerima `w` bekerja dengan cara mensimulasikan proses penurunan `w` dari simbol awal $S$ oleh tata bahasa $G$. Input awal yang dibaca oleh $M$ adalah $w\#S\#$. $M$ menerapkan aturan produksi yang ada di $P$ dengan mengubah string yang terletak di antara `#` sehingga pita masukan suatu saat diperoleh $w\#w\#$.
+
+Contoh:
+
+- $S \rightarrow ACaB$ <br/>
+- $Ca \rightarrow aaC$ <br/>
+- $CB \rightarrow DB$ <br/>
+- $CB \rightarrow E$ <br/>
+- $aD \rightarrow Da$ <br/>
+- $AD \rightarrow AC$ <br/>
+- $aE \rightarrow Ea$ <br/>
+- $AE \rightarrow \varepsilon$ <br/>
+
+Misal:
+
+$aaaa \# S \#$
+
+Maka:
+
+$
+aaaa \# S \#
+\Rightarrow aaaa \# ACaB \# \Rightarrow aaaa \# AaaCB \Rightarrow aaaa \# AaaDB \# \Rightarrow aaaa \# AaDaB \# \Rightarrow aaaa \# ADaaB \# \Rightarrow aaaa \# ACaaB \# \Rightarrow aaaa \# AaaCaB \# \Rightarrow aaaa \# AaaaaCB \# \Rightarrow aaaa \# AaaaaE \# \Rightarrow aaaa \# AaaaEa \# \Rightarrow aaaa \# AaaEaa \# \Rightarrow aaaa \# AaEaaa \# \Rightarrow aaaa \# AEaaaa \# \Rightarrow aaaa \# aaaa \#
+$
+
+## Source:
+
+- [bringITonUNPAS](https://youtube.com/@bringitonunpas4027)
