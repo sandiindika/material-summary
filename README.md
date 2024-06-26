@@ -4,6 +4,7 @@
 
 - [Java Apache Maven](/source/java-apache-maven.md)
 - [Java Database](/source/java-database.md)
+- [Jakarta Persistence API](/source/jakarta-persistence-api.md)
 
 ## Teori Komputasi
 
